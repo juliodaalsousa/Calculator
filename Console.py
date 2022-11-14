@@ -18,6 +18,12 @@ class Console:
         if not self.checker.checkNumber(text): return None
         return int(text)
 
+    def verfyDivision(self, num):
+        return self.checker.checkDivision(float(num))
+
+    def verifySqrt(self, num):
+        return self.checker.checkSqrt(float(num))
+
     def readOptions(self, options):
         text = self.read()
         for i in range(len(options)):

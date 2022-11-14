@@ -18,7 +18,7 @@ class App:
         if res == 0:
             print("Type a number")
             num = self.console.readNumber()
-            self.calculator.setState(num)
+            self.calculator.setState(float(num))
             self.display()
         elif res == 1:
             print("Type a number")
@@ -41,13 +41,19 @@ class App:
         elif res == 5:
             print("Type a number")
             num = self.console.readNumber()
-            self.calculator.division(num)
+            if self.console.verfyDivision(num):
+                print("Math Error")
+            else:
+                self.calculator.division(num)
             self.display()
         elif res == 6:
             self.calculator.percent()
             self.display()
         elif res == 7:
-            self.calculator.sqrt()
+            if self.console.verifySqrt(self.calculator.state):
+                print("Math Error")
+            else:
+                self.calculator.sqrt()
             self.display()
         elif res == 8:
             self.calculator.pow2()

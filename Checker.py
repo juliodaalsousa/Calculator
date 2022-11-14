@@ -3,7 +3,17 @@ class Checker:
         return str == "exit"
 
     def checkNumber(self, str):
-        return str.isnumeric()
+        if "-" in str:
+            str = str.split("-")
+            return str[1].isnumeric()
+        else:
+            return str.isnumeric()
+
+    def checkDivision(self, num):
+        return num == 0
+
+    def checkSqrt(self, num):
+        return num < 0
 
     def checkOption(self, str, idx):
         if self.checkNumber:
